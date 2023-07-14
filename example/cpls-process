@@ -1,0 +1,6 @@
+dir="out/`basename $1 .md`"
+file="$dir/index.html"
+mkdir -p "$dir"
+cp head.html "$file"
+md2html --fverbatim-entities "$1" >>"$file"
+cat foot >>"$file"

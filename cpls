@@ -1,0 +1,22 @@
+[ ! -z "$1" ] && list="$1" \
+|| [ ! -z "$SITELIST" ] && list="$SITELIST" \
+|| list=list
+
+awk '
+/%%/ { p=1 }
+!p {
+  system("cp "$1" "$2)
+  rm[i++] = $2
+}
+p && ! $2 {
+  system("cpls-process "$1);
+}
+p && $2 {
+  system("mkdir -p out/"$2);
+  system("cp "$1" out/"$2"/");
+}
+END {
+  while (i--)
+    system ("rm "rm[i]);
+}
+' <"$list"
