@@ -15,8 +15,11 @@ usage
 $ cpls [list]
 ```
 
-This expects an executable in ``$PATH`` called ``cpls-commit`` that will move
-the outputs to wherever they need to go.  If ``list`` is ommitted, the
+This expects executables in ``$PATH`` called ``cpls-commit`` and
+``cpls-process`` that will move
+the outputs to wherever they need to go.
+and process non-raw files, respectively.
+If ``list`` is ommitted, the
 environment variable ``$SITELIST`` will be read, then the file ``list`` as
 fallback.  All paths in ``list`` are relative to ``$PWD``, but ``cpls`` does not
 rely on being run from the source directory.

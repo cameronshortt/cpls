@@ -1,3 +1,5 @@
+# convert markdown to html with header and footer
+
 dir="out/`basename $1 .md`"
 file="$dir/index.html"
 mkdir -p "$dir"
